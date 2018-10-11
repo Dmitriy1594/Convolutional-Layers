@@ -77,6 +77,37 @@ In your folder you should have 10 fies:
 - [x] result_b.png
 - [x] result.png
 
+### convolution2d
+```python
+def convolve2d(image, kernel):
+    # Flip the kernel
+    kernel = np.flipud(np.fliplr(kernel))
+    # convolution output
+    output = np.zeros_like(image)
+    # Add zero padding to the input image
+    image_pad = np.zeros(
+        (image.shape[0] + kernel.shape[0] - 1, image.shape[1] + kernel.shape[1] - 1))
+    sh1 = int((kernel.shape[0] - 1) / 2)
+    sh2 = int((kernel.shape[1] - 1) / 2)
+    image_pad[sh1:-sh1, sh2:-sh2] = image
+
+    # Loop over every pixel of the image
+    for x in range(image.shape[1]):
+        for y in range(image.shape[0]):
+            # element-wise multiplication of the kernel and the image
+            output[y, x] = (kernel * image_pad[y:y + kernel.shape[0], x:x + kernel.shape[1]]).sum()
+    return output
+
+# kernel.kern
+imageconv = convolve2d(img, kernel)
+
+# kernel.kern3
+result_r = convolve2d(img, kernel_r)
+result_g = convolve2d(img, kernel_g)
+result_b = convolve2d(img, kernel_b)
+```
+
+
 ### Run the script from terminal or command line
 Run multichannel:
 ```
