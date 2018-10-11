@@ -10,7 +10,7 @@ The convolution is identical to the operation of the clipping but the core is mi
 * Boundary mirroring
 
 ### Kernel
-- [Kernel_cores](https://en.wikipedia.org/wiki/Kernel_(image_processing))
+- [Different_kernels](https://en.wikipedia.org/wiki/Kernel_(image_processing))
 
 #### How it works?
 <img src='theory/stride1.gif'>
@@ -24,14 +24,70 @@ The convolution is identical to the operation of the clipping but the core is mi
 In this directory you can find different kernels to your images.
 
 ## pictures
-In this directory you can find images and results.
+In this directory you can find images for your tests.
 
 ## src
 In directory you should have 2 fies:
-- [x] convolve_2.py
+- [x] convolve3.py
+- [x] convolve2.py
 - [x] convolve.py
 
-## convolve_2.py
+## convolve3.py
+### RGB convolution layers for all channels! 
+Also you can read your picture in one channel!
+
+### kernel.kern3
+You can write in file 3 kernels for all channels! First kernel (red), midlle (green), last (blue)
+```
+0 0 0
+0 1 0
+0 0 0
+
+0 0 0 0 0
+0 0 0 0 0
+0 0 1 0 0
+0 0 0 0 0
+0 0 0 0 0
+
+0 0 0
+0 1 0
+0 0 0
+```
+### kernel.kern
+It's similarly as in convolve2.py and convolve.py
+
+### Create folder with all result files
+The last argument in the command line is a name of your folder.
+#### If you write kernel.kern:
+In your folder you should have 2 fies:
+- [x] grayorig.txt
+- [x] grayorig.png
+- [x] result.txt
+- [x] result.png
+#### If you write kernel.kern3:
+In your folder you should have 10 fies:
+- [x] r.txt                 // red channel: original matrix
+- [x] result_r.txt          // red channel: result matrix
+- [x] result_r.png          // red channel: plot result
+- [x] g.txt                 // green channel: original matrix
+- [x] result_g.txt          // green channel: result matrix
+- [x] result_g.png          // green channel: plot result
+- [x] b.txt                 // blue channel: original matrix
+- [x] result_b.txt          // blue channel: result matrix
+- [x] result_b.png          // blue channel: plot result
+- [x] result.png            // result convolutional layers
+
+### Run the script from terminal or command line
+Run multichannel:
+```
+python conv.py 1.jpg kernel.kern3 super
+```
+Run one channel:
+```
+python conv.py 1.jpg kernel.kern super
+```
+
+## convolve2.py
 ### New feature!
 You can write in kernel file fractional numbers!
 ```
@@ -64,7 +120,7 @@ python convolve.py -i 12.png -f kernel.kern
 python convolve.py --image 12.png --file kernel.kern
 ```
 
-### convolution2d
+### convolution2d in convolve.py and convolve2.py
 ```python
 def convolve2d(image, kernel):
     # Flip the kernel
