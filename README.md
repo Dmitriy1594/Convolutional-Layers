@@ -66,16 +66,16 @@ In your folder you should have 2 fies:
 - [x] result.png
 #### If you write kernel.kern3:
 In your folder you should have 10 fies:
-- [x] r.txt                 // red channel: original matrix
-- [x] result_r.txt          // red channel: result matrix
-- [x] result_r.png          // red channel: plot result
-- [x] g.txt                 // green channel: original matrix
-- [x] result_g.txt          // green channel: result matrix
-- [x] result_g.png          // green channel: plot result
-- [x] b.txt                 // blue channel: original matrix
-- [x] result_b.txt          // blue channel: result matrix
-- [x] result_b.png          // blue channel: plot result
-- [x] result.png            // result convolutional layers
+- [x] r.txt                 |// red channel: original matrix
+- [x] result_r.txt          |// red channel: result matrix
+- [x] result_r.png          |// red channel: plot result
+- [x] g.txt                 |// green channel: original matrix
+- [x] result_g.txt          |// green channel: result matrix
+- [x] result_g.png          |// green channel: plot result
+- [x] b.txt                 |// blue channel: original matrix
+- [x] result_b.txt          |// blue channel: result matrix
+- [x] result_b.png          |// blue channel: plot result
+- [x] result.png            |// result convolutional layers
 
 ### Run the script from terminal or command line
 Run multichannel:
