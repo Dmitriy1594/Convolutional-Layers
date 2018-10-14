@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import matplotlib.pyplot as plt
 from scipy import misc
 import numpy as np
@@ -133,7 +131,7 @@ def readarg(image, kern, var):
         result_r = convolve2d(img, kernel_r)
 
         # Plot the convolve channel of the image
-        plt.imshow(result_r)
+        plt.imshow(result_r, cmap=plt.cm.gray)
         plt.axis('off')
         savematrix(result_r, 'result_r.txt')
         plt.savefig('./' + str(sys.argv[3]) + '/result_r.png')
@@ -156,7 +154,7 @@ def readarg(image, kern, var):
         result_g = convolve2d(img, kernel_g)
 
         # Plot the convolve channel of the image
-        plt.imshow(result_g)
+        plt.imshow(result_g, cmap=plt.cm.gray)
         plt.axis('off')
         savematrix(result_g, 'result_g.txt')
         plt.savefig('./' + str(sys.argv[3]) + '/result_g.png')
@@ -179,7 +177,7 @@ def readarg(image, kern, var):
         result_b = convolve2d(img, kernel_b)
 
         # Plot the convolve channel of the image
-        plt.imshow(result_b)
+        plt.imshow(result_b, cmap=plt.cm.gray)
         plt.axis('off')
         savematrix(result_b, 'result_b.txt')
         plt.savefig('./' + str(sys.argv[3]) + '/result_b.png')
@@ -189,7 +187,7 @@ def readarg(image, kern, var):
         # RGB convolve2d result
         result = getresult(result_r, result_g, result_b, img.shape[0], img.shape[1])
 
-        print('GREEN:')
+        print('RESULT:')
 
         # plot 3 channels
         plt.imshow(result)
