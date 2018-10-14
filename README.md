@@ -27,10 +27,8 @@ In this directory you can find different kernels to your images.
 In this directory you can find images for your tests.
 
 ## src
-In directory you should have 2 fies:
+In directory you should have 2 files:
 - [x] convolve3.py
-- [x] convolve2.py
-- [x] convolve.py
 
 ## convolve3.py
 ### RGB convolution layers for all channels! 
